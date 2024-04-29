@@ -1,0 +1,12 @@
+{
+  "name": "snackfy-vue",
+  "version": "1.0.0",
+  "description": "A Vue 3 library for elegant and customizable Snackbar notifications, easy to integrate and use for effective user feedback.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["notifications", "typescript", "snackbar", "vue3"],
+  "author": "ysoares0209",
+  "license": "MIT"
+}
