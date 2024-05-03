@@ -2,22 +2,13 @@
   import { ref, computed, defineExpose } from 'vue';
   import LoadingBar from './LoadingBar.vue';
   import Snackbar from './Snackbar.vue';
-
-  /* Types */
-  type NotificationType = 'success' | 'error';
-  type ShowNotificationsProps = {
-    message: string;
-    type: NotificationType;
-    duration?: number;
-  };
-
-  /* CONSTANTS */
-  const SUCCESS_COLOR = '#63b365';
-  const ERROR_COLOR = '#f22e2e';
-
-  const DEFAULT_DURATION = 2.5;
-  // offset to ensure the notification is removed after the animation plays out
-  const DURATION_OFFSET_IN_MS = 300;
+  import type { NotificationType, ShowNotificationsProps } from '../types';
+  import {
+    SUCCESS_COLOR,
+    ERROR_COLOR,
+    DEFAULT_DURATION,
+    DURATION_OFFSET_IN_MS
+  } from '../constants';
 
   /* REFs */
   const _isVisible = ref<boolean>(false);
