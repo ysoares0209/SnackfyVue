@@ -52,9 +52,14 @@
     justify-content: center;
   }
 
+  .title {
+    text-align: center;
+  }
+
   .notification-form {
-    height: 20rem;
-    width: 30rem;
+    width: 60%;
+    min-width: 18rem;
+    max-width: 30rem;
     padding: 2rem;
     margin-top: 2rem;
     display: flex;
@@ -67,5 +72,17 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    input,
+    select {
+      height: 2rem;
+      border-radius: 4px;
+      border: 1px solid #181818;
+      padding: 6px;
+    }
+
+    input:focus {
+      outline: none;
+    }
   }
 </style>
