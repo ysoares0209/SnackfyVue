@@ -29,11 +29,9 @@
   .SnackfyVue-Snackbar {
     visibility: hidden;
     position: fixed;
-    bottom: 2rem;
-    right: 3rem;
-    min-width: 300px;
-    min-height: 50px;
-    max-width: 550px;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 330px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -42,6 +40,15 @@
     padding: 0.75rem 1rem;
     border-radius: 6px;
     box-shadow: 1px 2px 6px #181626;
+
+    @media screen and (min-width: 620px) {
+      max-width: 550px;
+    }
+
+    @media screen and (min-width: 1048px) {
+      bottom: 2rem;
+      right: 2rem;
+    }
   }
 
   .SnackfyVue-Snackbar-show {
