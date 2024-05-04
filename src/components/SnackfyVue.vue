@@ -29,7 +29,7 @@
     _isVisible.value = true;
     _message.value = message;
     _type.value = type;
-    _duration.value = duration;
+    _duration.value = parseInt(duration as unknown as string);
 
     // reset automatically after notification plays out
     // duration * 1000 to convert to milliseconds
