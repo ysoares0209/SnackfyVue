@@ -6,6 +6,8 @@
   import {
     SUCCESS_COLOR,
     ERROR_COLOR,
+    SUCCESS_ICON,
+    ERROR_ICON,
     DEFAULT_DURATION,
     DURATION_OFFSET_IN_MS
   } from '../constants';
@@ -19,6 +21,9 @@
   /* Computed */
   const notificationColor = computed(() => {
     return _type.value === 'success' ? SUCCESS_COLOR : ERROR_COLOR;
+  });
+  const notificationIcon = computed(() => {
+    return _type.value === 'success' ? SUCCESS_ICON : ERROR_ICON;
   });
 
   function showNotification({
@@ -50,6 +55,12 @@
 <template>
   <Snackbar :isVisible="_isVisible" :duration="_duration">
     <div class="SnackfyVue-message-wrapper">
+      <v-icon
+        class="SnackfyVue-icon"
+        scale="1.5"
+        :name="notificationIcon"
+        :fill="notificationColor"
+      />
       <p class="SnackfyVue-message">{{ _message }}</p>
     </div>
     <LoadingBar :duration="_duration" :color="notificationColor" />
@@ -67,6 +78,5 @@
     font-size: 0.875rem;
     color: #323743ff;
     width: 100%;
-    text-align: center;
   }
 </style>
