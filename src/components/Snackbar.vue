@@ -42,6 +42,11 @@
     padding: 0.75rem 1rem;
     border-radius: 6px;
     box-shadow: 1px 2px 6px #181626;
+
+    @media screen and (max-width: 768px) {
+      right: 1rem;
+      bottom: 1rem;
+    }
   }
 
   .SnackfyVue-Snackbar-show {
