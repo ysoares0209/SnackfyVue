@@ -32,6 +32,7 @@
     bottom: 1rem;
     right: 1rem;
     max-width: 330px;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;

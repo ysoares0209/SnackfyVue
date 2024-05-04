@@ -29,6 +29,7 @@
         <label for="type">Type</label>
         <select id="type" v-model="type">
           <option value="success">Success</option>
+          <option value="info">Info</option>
           <option value="error">Error</option>
         </select>
       </div>

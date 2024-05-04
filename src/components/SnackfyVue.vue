@@ -5,7 +5,11 @@
   import type { NotificationType, ShowNotificationsProps } from '../types';
   import {
     SUCCESS_COLOR,
+    INFO_COLOR,
     ERROR_COLOR,
+    SUCCESS_ICON,
+    INFO_ICON,
+    ERROR_ICON,
     DEFAULT_DURATION,
     DURATION_OFFSET_IN_MS
   } from '../constants';
@@ -13,17 +17,25 @@
   /* REFs */
   const _isVisible = ref<boolean>(false);
   const _message = ref<string>('');
-  const _type = ref<NotificationType>('success');
+  const _type = ref<NotificationType>('info');
   const _duration = ref<number>(DEFAULT_DURATION);
 
   /* Computed */
   const notificationColor = computed(() => {
-    return _type.value === 'success' ? SUCCESS_COLOR : ERROR_COLOR;
+    if (_type.value === 'success') return SUCCESS_COLOR;
+    if (_type.value === 'info') return INFO_COLOR;
+    return ERROR_COLOR;
+  });
+
+  const notificationIcon = computed(() => {
+    if (_type.value === 'success') return SUCCESS_ICON;
+    if (_type.value === 'info') return INFO_ICON;
+    return ERROR_ICON;
   });
 
   function showNotification({
     message = '',
-    type = 'success' as NotificationType,
+    type = 'info' as NotificationType,
     duration = DEFAULT_DURATION
   }: ShowNotificationsProps) {
     _isVisible.value = true;
@@ -50,6 +62,12 @@
 <template>
   <Snackbar :isVisible="_isVisible" :duration="_duration">
     <div class="SnackfyVue-message-wrapper">
+      <v-icon
+        class="SnackfyVue-icon"
+        scale="1.5"
+        :name="notificationIcon"
+        :fill="notificationColor"
+      />
       <p class="SnackfyVue-message">{{ _message }}</p>
     </div>
     <LoadingBar :duration="_duration" :color="notificationColor" />
@@ -67,6 +85,5 @@
     font-size: 0.875rem;
     color: #323743ff;
     width: 100%;
-    text-align: center;
   }
 </style>
