@@ -1,4 +1,4 @@
-export type NotificationType = 'success' | 'error';
+export type NotificationType = 'success' | 'info' | 'error';
 export type ShowNotificationsProps = {
   message: string;
   type: NotificationType;
