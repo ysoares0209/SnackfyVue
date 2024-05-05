@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  import SnackfyVue from './components/SnackfyVue.vue';
+  import SnackfyVue from '../lib/SnackfyVue.vue';
 
   const SnackfyVueRef = ref<typeof SnackfyVue>(SnackfyVue);
   const message = ref<string>('');
