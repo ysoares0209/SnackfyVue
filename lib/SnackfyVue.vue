@@ -2,7 +2,7 @@
   import { ref, computed, defineExpose } from 'vue';
   import LoadingBar from './LoadingBar.vue';
   import Snackbar from './Snackbar.vue';
-  import type { NotificationType, ShowNotificationsProps } from '../types';
+  import type { NotificationType, ShowNotificationsProps } from './types';
   import {
     SUCCESS_COLOR,
     INFO_COLOR,
@@ -12,7 +12,7 @@
     ERROR_ICON,
     DEFAULT_DURATION,
     DURATION_OFFSET_IN_MS
-  } from '../constants';
+  } from './constants';
 
   /* REFs */
   const _isVisible = ref<boolean>(false);
