@@ -3,12 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/snackfy-vue.umd.cjs",
+  "module": "./dist/snackfy-vue.js",
+  "exports": {
+    ".": {
+      "import": "./dist/snackfy-vue.js",
+      "require": "./dist/snackfy-vue.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build && vue-tsc --emitDeclarationOnly --declaration",
     "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
   },
