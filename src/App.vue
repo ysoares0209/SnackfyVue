@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
-  import SnackfyVue from '../lib/SnackfyVue.vue';
+  import SnackfyVue, { ShowNotificationsProps } from '../lib/';
 
   const SnackfyVueRef = ref<typeof SnackfyVue>(SnackfyVue);
   const message = ref<string>('');
@@ -11,9 +11,9 @@
     e.preventDefault();
     SnackfyVueRef.value.showNotification({
       message: message.value,
-      type: type.value as 'success' | 'error',
+      type: type.value as 'success' | 'info' | 'error',
       duration: duration.value
-    });
+    } as ShowNotificationsProps);
   };
 </script>
 

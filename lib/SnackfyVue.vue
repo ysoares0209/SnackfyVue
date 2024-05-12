@@ -54,7 +54,9 @@
     }, timeout);
   }
 
-  defineExpose({
+  defineExpose<{
+    showNotification: (props: ShowNotificationsProps) => void;
+  }>({
     showNotification
   });
 </script>
